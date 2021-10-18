@@ -1,0 +1,4 @@
+constants
+formatANSI
+
+	^'ANSI'

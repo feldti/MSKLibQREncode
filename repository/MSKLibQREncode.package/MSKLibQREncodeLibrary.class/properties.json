@@ -1,0 +1,14 @@
+{
+	"category" : "MSKLibQREncode",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "MSKLibQREncodeLibrary",
+	"pools" : [
+		 ],
+	"super" : "MSKExternalLibraryInterface",
+	"type" : "normal" }

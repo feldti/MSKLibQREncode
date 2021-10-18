@@ -1,0 +1,4 @@
+constants
+errorCorrectionLevelL
+
+	^'L'

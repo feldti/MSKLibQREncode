@@ -1,0 +1,27 @@
+{
+	"category" : "MSKLibQREncode",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"filename",
+		"moduleSize",
+		"correctionLevel",
+		"symbolVersion",
+		"marginsWidth",
+		"pngDPI",
+		"graphicsFormat",
+		"makeStructuredSymbols",
+		"assumeKanjiMode",
+		"enableMicroCode",
+		"foreground",
+		"background",
+		"qrToolFullPath",
+		"text" ],
+	"name" : "MSKLibQRToolOptions",
+	"pools" : [
+		 ],
+	"super" : "MSKExternalLibraryInterface",
+	"type" : "normal" }

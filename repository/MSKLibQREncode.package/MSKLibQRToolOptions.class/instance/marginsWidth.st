@@ -1,0 +1,3 @@
+Accessing
+marginsWidth
+	^marginsWidth
