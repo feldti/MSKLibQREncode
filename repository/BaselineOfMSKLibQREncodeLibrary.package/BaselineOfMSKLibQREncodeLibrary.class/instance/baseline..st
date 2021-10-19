@@ -1,6 +1,6 @@
 other
 baseline: spec 
-
+	<baseline>
 	spec
 		for: #'gemstone'
 		do: [
