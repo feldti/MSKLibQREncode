@@ -5,6 +5,8 @@ A wrapper around zbar-tools. You may load the Linux stuff via
 sudo apt-get install zbar-tools
 ```
 
+with these external programs you may create images containing QR codes and you may even read image files to get the content out of the QR code.
+
 ## Installation
 
 You can load MSKLibQREncode using Metacello
