@@ -1,0 +1,15 @@
+{
+	"category" : "BaselineOfMSKLibQREncodeLibrary",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		"Lf",
+		"Tab" ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfMSKLibQREncodeLibrary",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }

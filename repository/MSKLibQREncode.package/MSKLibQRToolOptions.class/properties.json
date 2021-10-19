@@ -23,5 +23,5 @@
 	"name" : "MSKLibQRToolOptions",
 	"pools" : [
 		 ],
-	"super" : "MSKExternalLibraryInterface",
+	"super" : "Object",
 	"type" : "normal" }

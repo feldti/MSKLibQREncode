@@ -1,17 +1,18 @@
 tool-support
 zbarReadQRCode: filePath executivePath: exePath
-	"
+	"^<String | nil>
 		Binding to http://fukuchi.org/works/qrencode/manual/functions.html
 
 	| aMSKLibQRToolOptions |
 
-		aMSKLibQRToolOptions := MSKLibQRToolOptions newPNGFor: 'www.schrievkrom.de/extfiles/public-smalltalk'  path: '/var/www/html/extfiles/test.png' .
+		aMSKLibQRToolOptions := MSKLibQRToolOptions newPNGFor: 'schrievkrom.wordpress.com'  path: '/var/www/html/test.png' .
 		aMSKLibQRToolOptions
 			moduleSize: 15 ;
 			foreground: Color black ;
 			background: Color white.
+		MSKLibQREncodeLibrary qrToolCreateQRCode: aMSKLibQRToolOptions.
 
-		MSKLibQREncodeLibrary zbarReadQRCode: '/var/www/html/extfiles/test.png' 
+		MSKLibQREncodeLibrary zbarReadQRCode: '/var/www/html/test1.png' 
 	"
 
 	| commandLine process |
