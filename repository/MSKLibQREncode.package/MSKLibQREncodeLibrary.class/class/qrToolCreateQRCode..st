@@ -14,7 +14,10 @@ qrToolCreateQRCode: aMSKLibQRToolOptions
 		MSKLibQREncodeLibrary qrToolCreateQRCode: aMSKLibQRToolOptions
 	"
 
-	| commandLine |
+	| commandLine process |
+
+	((GsFile existsOnServer:  aMSKLibQRToolOptions qrToolFullPath) ifNil: [ false ])
+		ifFalse:[ ExLibQRNotInstalled new info: aMSKLibQRToolOptions qrToolFullPath ; signal ].
 
 	commandLine := WriteStream on: String new.
 
@@ -47,4 +50,20 @@ qrToolCreateQRCode: aMSKLibQRToolOptions
 
 	"Transcript show: commandLine contents ; cr."
 
-	^GsHostProcess fork: commandLine contents
+	process := GsHostProcess fork: commandLine contents.
+
+	"[ process childHasExited ] whileFalse: [
+		(Delay forMilliseconds: 10) wait
+	]."
+
+	((GsFile existsOnServer:  aMSKLibQRToolOptions filename) ifNil: [ false ])
+		ifFalse:[ ExLibQROutputNotCreatable new info: aMSKLibQRToolOptions filename ; signal ].
+
+	^process childStatus = 0 
+		ifTrue:[ 
+			| stream |
+
+			stream := ReadStream on: (process stdout readString: 4096).
+			stream nextLine
+		] 
+		ifFalse:[ nil ]

@@ -12,10 +12,17 @@ zbarReadQRCode: filePath executivePath: exePath
 			background: Color white.
 		MSKLibQREncodeLibrary qrToolCreateQRCode: aMSKLibQRToolOptions.
 
-		MSKLibQREncodeLibrary zbarReadQRCode: '/var/www/html/test1.png' 
+		MSKLibQREncodeLibrary zbarReadQRCode: '/var/www/html/test.png' 
 	"
 
-	| commandLine process |
+	| commandLine process stream |
+
+	((GsFile existsOnServer:  exePath) ifNil: [ false ])
+		ifFalse:[ ExLibQRNotInstalled new info: exePath ; signal ].
+
+	((GsFile existsOnServer:  filePath) ifNil: [ false ])
+		ifFalse:[ ExLibQRInputNotFound new info: filePath ; signal ].
+
 
 	commandLine := WriteStream on: String new.
 
@@ -26,15 +33,19 @@ zbarReadQRCode: filePath executivePath: exePath
 
 	process := GsHostProcess fork: commandLine contents.
 
-	[ process childStatus isNil ] whileTrue:[
-		(Delay forMilliseconds: 10) wait
-	].
+	stream := ReadStream on: (process stdout readString: 4096).
+	^stream nextLine
 
-	^process childStatus = 0 
+	"whole stuff not working"
+	"[ process childStatus isNil ] whileTrue:[
+		(Delay forMilliseconds: 10) wait
+	]."
+
+	"^process childStatus = 0 
 		ifTrue:[ 
 			| stream |
 
 			stream := ReadStream on: (process stdout readString: 4096).
 			stream nextLine
 		] 
-		ifFalse:[ nil ]
+		ifFalse:[ nil ]"
