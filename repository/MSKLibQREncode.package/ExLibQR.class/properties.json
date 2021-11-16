@@ -1,0 +1,14 @@
+{
+	"category" : "MSKLibQREncode",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		"info" ],
+	"name" : "ExLibQR",
+	"pools" : [
+		 ],
+	"super" : "Error",
+	"type" : "normal" }
