@@ -9,7 +9,7 @@ with these external programs you may create images containing QR codes and you m
 
 ## How to use it
 
-a) You have a link and want to create a png file, containting the QR code for that link
+a) You have a link and want to create a png file, containing the QR code for that link
 
 ```Smalltalk
   | aMSKLibQRToolOptions |
