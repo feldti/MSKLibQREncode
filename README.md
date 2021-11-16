@@ -15,7 +15,7 @@ a) You have a link and want to create a png file, containing the QR code for tha
   | aMSKLibQRToolOptions |
 
   aMSKLibQRToolOptions := MSKLibQRToolOptions 
-                            newPNGFor: 'www.schrievkrom.de/extfiles/public-smalltalk'  
+                            newPNGFor: 'www.spiegel.de'  
                             path: '/var/www/html/extfiles/test.png' .
   aMSKLibQRToolOptions
     moduleSize: 15 ;
