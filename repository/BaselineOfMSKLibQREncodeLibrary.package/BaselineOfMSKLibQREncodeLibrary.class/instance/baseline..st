@@ -15,11 +15,12 @@ baseline: spec
 
 			"Now the actual delivered packages"
 			spec
-				package: 'MSKLibQREncode';
+				package: 'MSKLibQREncode'  with: [ spec requires: #('MSKPlatformExtension') ] ;
 				yourself.
 
 			"Now the names for more specific loading"
 			spec
+				group: 'core' with: #('MSKLibQREncode');
 				group: 'default' with: #('MSKLibQREncode');
 				yourself
 		]
