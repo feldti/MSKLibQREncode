@@ -17,10 +17,10 @@ a) You have a link and want to create a png file, containing the QR code for tha
   aMSKLibQRToolOptions := MSKLibQRToolOptions newPNGFor: 'www.schrievkrom.de/extfiles/public-smalltalk'  path: '/var/www/html/extfiles/test.png' .
   aMSKLibQRToolOptions
     moduleSize: 15 ;
-		foreground: Color black ;
-		background: Color white.
+    foreground: Color black ;
+    background: Color white.
 
-	MSKLibQREncodeLibrary qrToolCreateQRCode: aMSKLibQRToolOptions
+  MSKLibQREncodeLibrary qrToolCreateQRCode: aMSKLibQRToolOptions
 ```
 
 b) You have a QR code (as png file) and want to get the link out of it:
