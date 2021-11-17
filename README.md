@@ -57,6 +57,8 @@ b.2) Or an alternative (with all checkings)
 		qrInformation :=  aMSKLibQRTool readQRCodeAndWaitForResult
 ```
 
+In case of any errors exceptions should be thrown ...
+
 ## Installation
 
 You can load MSKLibQREncode using Metacello
