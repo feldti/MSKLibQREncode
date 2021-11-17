@@ -13,8 +13,8 @@ initialize
 	makeStructuredSymbols := false.
 	assumeKanjiMode := false.
 	enableMicroCode := false.
-	foreground := nil.                 
-	background := nil.
+	foreground := Color black.                 
+	background := Color white.
 	text := ''.
 	debug := false.
 	msWait := 10.
