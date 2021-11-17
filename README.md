@@ -17,8 +17,6 @@ a) You have a link and want to create a png file, containing the QR code for tha
   aMSKLibQRTool := MSKLibQRTool newPNGFor: 'www.spiegel.de'  path: '/var/www/html/test.png' .
   childState := aMSKLibQRTool
                   moduleSize: 15 ;
-                  foreground: Color black ;
-                  background: Color white ;
                   checkForToolPath ;
                   removeOutputFile ;
                   createQRCode ;
@@ -34,8 +32,6 @@ a.2) Or as an alternative, which does all the checkings automatically:
   aMSKLibQRTool := MSKLibQRTool newPNGFor: 'www.spiegel1.de'  path: '/var/www/html/test.png' .
   childState := aMSKLibQRTool
                   moduleSize: 15 ;
-                  foreground: Color black ;
-                  background: Color white ;
                   createQRCodeAndWaitForResult
 ```
 
