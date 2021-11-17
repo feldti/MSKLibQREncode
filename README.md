@@ -1,5 +1,5 @@
 # MSKLibQREncode
-A wrapper around zbar-tools. You may load the Linux stuff via
+A wrapper around zbar-tools to be used by Gemstone/S database. You may install the Linux stuff via
 
 ```Bash
 sudo apt-get install zbar-tools
