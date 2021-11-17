@@ -43,13 +43,13 @@ b) You have a QR code (as png file) and want to get the link out of it:
 
 ```Smalltalk
   | aMSKLibQRTool qrInformation |
-  	aMSKLibQRTool := MSKLibQRTool readQRCodeFromPath: '/var/www/html/test.png' .
-		qrInformation := 
-      aMSKLibQRTool
-        readQRCode ;
-        waitForProcessState ;
-        checkForReturnCode ;
-        qrContent
+	aMSKLibQRTool := MSKLibQRTool readQRCodeFromPath: '/var/www/html/test.png' .
+	qrInformation := 
+	      aMSKLibQRTool
+		readQRCode ;
+		waitForProcessState ;
+		checkForReturnCode ;
+		qrContent
 ```
 
 
