@@ -12,23 +12,53 @@ with these external programs you may create images containing QR codes and you m
 a) You have a link and want to create a png file, containing the QR code for that link
 
 ```Smalltalk
-  | aMSKLibQRToolOptions |
+ | aMSKLibQRTool childState |
 
-  aMSKLibQRToolOptions := MSKLibQRToolOptions 
-                            newPNGFor: 'www.spiegel.de'  
-                            path: '/var/www/html/extfiles/test.png' .
-  aMSKLibQRToolOptions
-    moduleSize: 15 ;
-    foreground: Color black ;
-    background: Color white.
+  aMSKLibQRTool := MSKLibQRTool newPNGFor: 'www.spiegel.de'  path: '/var/www/html/test.png' .
+  childState := aMSKLibQRTool
+                  moduleSize: 15 ;
+                  foreground: Color black ;
+                  background: Color white ;
+                  checkForToolPath ;
+                  removeOutputFile ;
+                  createQRCode ;
+                  waitForProcessState ;
+                  checkForOutputFile ;
+                  checkForReturnCode
+```
+a.2) Or as an alternative, which does all the checkings automatically:
 
-  MSKLibQREncodeLibrary qrToolCreateQRCode: aMSKLibQRToolOptions
+```Smalltalk
+  | aMSKLibQRTool childState |
+
+  aMSKLibQRTool := MSKLibQRTool newPNGFor: 'www.spiegel1.de'  path: '/var/www/html/test.png' .
+  childState := aMSKLibQRTool
+                  moduleSize: 15 ;
+                  foreground: Color black ;
+                  background: Color white ;
+                  createQRCodeAndWaitForResult
 ```
 
 b) You have a QR code (as png file) and want to get the link out of it:
 
 ```Smalltalk
-  MSKLibQREncodeLibrary zbarReadQRCode: '/var/www/html/extfiles/test.png' 
+  | aMSKLibQRTool qrInformation |
+  	aMSKLibQRTool := MSKLibQRTool readQRCodeFromPath: '/var/www/html/test.png' .
+		qrInformation := 
+      aMSKLibQRTool
+        readQRCode ;
+        waitForProcessState ;
+        checkForReturnCode ;
+        qrContent
+```
+
+
+b.2) Or an alternative (with all checkings)
+
+```Smalltalk
+  | aMSKLibQRTool |
+  	aMSKLibQRTool := MSKLibQRTool readQRCodeFromPath: '/var/www/html/test.png' .
+		qrInformation :=  aMSKLibQRTool readQRCodeAndWaitForResult
 ```
 
 ## Installation
