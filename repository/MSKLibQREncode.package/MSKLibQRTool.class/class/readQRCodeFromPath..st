@@ -1,7 +1,7 @@
 instance creation
-newPNGFor: aString path: filePath
+readQRCodeFromPath: filePath
 
 	^self new initialize
-		text: aString ;
 		filename: filePath ;
+		qrToolFullPath: self defaultZBarImgPath ;
 		yourself
